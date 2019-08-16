@@ -4,17 +4,17 @@ vguess= inputs.PEsol.global_theta_guess;
 
 inputs.ivpsol.nthread=8;
 
-% problem.x_0=vguess;
+problem.x_0=vguess;
 problem.x_U=inputs.PEsol.global_theta_max;
 problem.x_L=inputs.PEsol.global_theta_min;
 
 problem.f=@davidObj;
 
-inputs.nlpsol.eSS.dim_refset=25;
-inputs.nlpsol.eSS.ndiverse=1000;
-inputs.nlpsol.eSS.local.n1=4;
-inputs.nlpsol.eSS.local.n2=4;
-inputs.nlpsol.eSS.maxeval=100000;
+inputs.nlpsol.eSS.dim_refset=2;
+inputs.nlpsol.eSS.ndiverse=100;
+inputs.nlpsol.eSS.local.n1=1;
+inputs.nlpsol.eSS.local.n2=3;
+inputs.nlpsol.eSS.maxeval=10000;
 inputs.nlpsol.eSS.maxtime=inf;
 inputs.nlpsol.eSS.local.solver='fmincon';
 inputs.nlpsol.eSS.local.finish=0;

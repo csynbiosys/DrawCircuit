@@ -14,8 +14,8 @@ exps.n_exp=N_EXPERIMENTS;
 
 if normalize
     vec=[READOUT_COLS STIMULI_COLS];
-    for i=1:length([READOUT_COLS ])
-       DATA.data(:,vec(i))=(DATA.data(:,vec(i))-min(DATA.data(:,vec(i))))/( max(DATA.data(:,vec(i)))-min(DATA.data(:,vec(i))) );
+    for i=1:length(vec)
+       DATA.data(:,vec(i))=(DATA.data(:,vec(i)))/( max(DATA.data(:,vec(i))) );
     end
 end
 
@@ -54,7 +54,7 @@ for iexp=1:N_EXPERIMENTS
     exps.noise_type = 'homo'; 
     exps.exp_data{iexp} = DATA.data(index,READOUT_COLS);
     exps.error_data{iexp} = DATA.data(index,STD_COLS);
-    exps.exp_y0{iexp} = exps.exp_data{iexp}(1,:);
+    exps.exp_y0{iexp} = [exps.exp_data{iexp}(1,:) exps.u{iexp}(:,1)'] ;
 
 end
 
