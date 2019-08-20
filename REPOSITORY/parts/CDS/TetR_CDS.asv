@@ -1,8 +1,0 @@
-codes={'protein'};
-names={'TetR_protein'};
-transcriptionParameter='k_tl_TetR';
-transcriptDegradationParameter='kdeg_mRNA_TetR';
-parNamesCDS={transcriptionParameter,};
-
-transcriptDegradation=0.3466;
-parValuesCDS=[6.9315 transcriptDegradation];
